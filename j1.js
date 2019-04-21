@@ -1,14 +1,28 @@
-<!DOCTYPE html>
-<html>
-<body>
+function textan(txt){
+  var text = txt;
+  this.tl1 = text.length;
+  this.tl2 = text.replace(/\s/g, "").length;
+  this.wc = text.trim().split(/\s+/).length;
+  text = text.split('').sort().join('');
+  var freq = {};
+    for (var i=0; i<text.length;i++) {
+        var character = text.charAt(i);
+        if (isNaN(character) && (character !=" ")){
 
-<h2>My First JavaScript</h2>
+          if (freq[character] )
+           {
+             freq[character]++;
+          } else {
+             freq[character] = 1;
+          }
 
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
+        }
 
-<p id="demo"></p>
 
-</body>
-</html> 
+    }
+  this.cc = freq;
+}
+
+module.exports = {
+  textan: textan
+}

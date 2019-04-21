@@ -1,7 +1,40 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Summer</h1>
-<p>I love the sun!</p>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+function textan(txt){
+  var text = txt;
+  var tl1 = text.length;
+  var tl2 = text.replace(/\s/g, "").length;
+  var wc = text.trim().split(/\s+/).length;
+  var freq = {};
+    for (var i=0; i<text.length;i++) {
+        var character = text.charAt(i);
+        if (isNaN(character) && (character !=" ")){
+
+          if (freq[character] )
+           {
+             freq[character]++;
+          } else {
+             freq[character] = 1;
+          }
+
+        }
+
+
+    }
+  return freq;
+}
+
+console.log(textan("hello 2 times  "));
+</script>
+
 </body>
 </html>

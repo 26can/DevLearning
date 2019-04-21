@@ -1,6 +1,9 @@
-var http = require('http');
+let dt = require('./j1');
+let ta = dt.textan;
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hello World!');
-}).listen(8080);
+let ta1 = new ta("hello 2 times  ");
+
+console.log(ta1.tl1);
+console.log(ta1.tl2);
+console.log(ta1.wc);
+console.log(ta1.cc);
